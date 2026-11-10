@@ -10,6 +10,14 @@ class Fruta:
 
 
 class GestorFrutasBase:
-    def __init__(self):
+    def __init__(frutas):
         self.frutas = {}
         self.proximo_id = 1
+
+        def mostrar_grelha(self):
+            print("\n" + "=" * 60)
+            print(" ESTOQUE DISPONÍVEL (GRELHA DE FRUTAS) ")
+            print("=" * 10)
+            print(f"{'ID':<6} | {'Tipo':<15} | {'Espécie':<15} | {'Peso Disp. (kg)':<15}")
+            print("-" * 60)
+            print("=" * 60 + "\n")
