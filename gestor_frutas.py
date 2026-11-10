@@ -45,3 +45,17 @@ class GestorFrutasBase:
         self.frutas[self.proximo_id] = nova_fruta
         print(f"\n[OK] Fruta '{tipo}' registada com sucesso com o ID: {self.proximo_id}!")
         self.proximo_id += 1
+
+
+    def ver_fruta(self):
+        print("\n--- CONSULTAR FRUTA POR ID ---")
+        f_id = int(input("Digita o ID da fruta: "))
+        fruta = self.frutas.get(f_id)
+        if fruta:
+            print("\n" + "-" * 35)
+            print(f"DETALHES DA FRUTA [ID: {fruta.id}]")
+            print("-" * 35)
+            print(f"Tipo: {fruta.tipo}\nEspécie: {fruta.especie}\nPeso em estoque: {fruta.peso:.2f} kg")
+            print("-" * 35)
+        else:
+            print(f"Fruta com o ID {f_id} não encontrada.")
