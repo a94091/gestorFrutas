@@ -31,9 +31,16 @@ class GestorFrutasBase:
         print("\n--- ADICIONAR NOVA FRUTA AO ESTOQUE ---")
         tipo = input("Tipo da fruta (ex: Maçã, Laranja): ").strip()
         especie = input("Espécie da fruta (ex: Fuji, Gala): ").strip()
-        peso = float(input("Peso total para estoque (kg): "))
-        if peso < 0:
-         print("O peso não pode ser negativo.")
+        while True:
+            try:
+                peso = float(input("Peso total para stock(kg): "))
+                if peso < 0:
+                    print("O peso não pode ser negativo.")
+                    continue
+                break
+            except ValueError:
+                print("Por favor, introduz um numero válido.")
+
         nova_fruta = Fruta(self.proximo_id, tipo, especie, peso)
         self.frutas[self.proximo_id] = nova_fruta
         print(f"\n[OK] Fruta '{tipo}' registada com sucesso com o ID: {self.proximo_id}!")
