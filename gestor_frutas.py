@@ -49,7 +49,14 @@ class GestorFrutasBase:
 
     def ver_fruta(self):
         print("\n--- CONSULTAR FRUTA POR ID ---")
-        f_id = int(input("Digita o ID da fruta: "))
+        if not self.frutas:
+            print("Não há frutas no stock")
+            return
+        try:
+            f_id = int(input("Digita o ID da fruta: "))
+        except ValueError:
+            print("Id inválido.")
+            return
         fruta = self.frutas.get(f_id)
         if fruta:
             print("\n" + "-" * 35)
