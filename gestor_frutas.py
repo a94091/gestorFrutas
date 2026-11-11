@@ -72,9 +72,54 @@ class GestorFrutasBase:
         if not self.frutas:
             print("Não há frutas registadas para atualizar.")
             return
+
         try:
             f_id = int(input("Digita o ID da fruta a atualizar: "))
         except ValueError:
             print("ID inválido.")
             return
-        
+
+        fruta = self.frutas.get(f_id)
+        if not fruta:
+            print(f"Fruta com o ID {f_id} não encontrada.")
+            return
+
+        print(f"\nA atualizar os dados da fruta ID {f_id}:")
+        print("Preenche os novos dados, todos os campos são obrigatórios:\n")
+
+        #pede o novo tipo , não aceita deixar vazio
+        while True:
+            novo_tipo = input("Novo Tipo: ").strip()
+            if novo_tipo == "":
+                print("Aviso: O tipo não pode ficar vazio! Tenta novamente.")
+            else:
+                fruta.tipo = novo_tipo
+                break
+
+       #pede a nova especie , não aceita deixar vazio
+        while True:
+            nova_especie = input("Nova Espécie: ").strip()
+            if nova_especie == "":
+                print("Aviso: A espécie não pode ficar vazia! Tenta novamente.")
+            else:
+                fruta.especie = nova_especie
+                break
+
+        # 4.pede o novo peso não aceita deixar vazio, nem texto, nem zero e negativo
+        while True:
+            novo_peso = input("Novo Peso em kg: ").strip()
+            if novo_peso == "":
+                print("Aviso: O peso não pode ficar vazio!")
+                continue
+
+            try:
+                peso_valido = float(novo_peso)
+                if peso_valido <= 0:
+                    print("Aviso: O peso não pode ser zero e negativo.")
+                    continue
+                fruta.peso = peso_valido
+                break
+            except ValueError:
+                print("Aviso: Por favor, introduz um número válido.")
+
+        print(f"\n[OK] Fruta ID {f_id} atualizada com sucesso!")
