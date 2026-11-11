@@ -66,3 +66,15 @@ class GestorFrutasBase:
             print("-" * 35)
         else:
             print(f"Fruta com o ID {f_id} não encontrada.")
+
+    def atualizar_fruta(self):
+        print("\n--- ATUALIZAR FRUTA ---")
+        if not self.frutas:
+            print("Não há frutas registadas para atualizar.")
+            return
+        try:
+            f_id = int(input("Digita o ID da fruta a atualizar: "))
+        except ValueError:
+            print("ID inválido.")
+            return
+        
