@@ -123,3 +123,9 @@ class GestorFrutasBase:
                 print("Aviso: Por favor, introduz um número válido.")
 
         print(f"\n[OK] Fruta ID {f_id} atualizada com sucesso!")
+
+    def apagar_fruta(self):
+        print("\n--- APAGAR FRUTA ---")
+        if not self.frutas:
+            print("Não existem frutas registadas para apagar.")
+            return
