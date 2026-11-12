@@ -16,21 +16,21 @@ class GestorFrutasBase:
 
     def mostrar_grelha(self):
         print("\n" + "=" * 60)
-        print(" ESTOQUE DISPONÍVEL (GRELHA DE FRUTAS) ")
+        print(" STOCK DISPONÍVEL - GRELHA DE FRUTAS - ")
         print("=" * 60)
         print(f"{'ID':<6} | {'Tipo':<15} | {'Espécie':<15} | {'Peso Disp. (kg)':<15}")
         print("-" * 60)
         if not self.frutas:
-            print(" Nenhuma fruta registada no estoque.")
+            print(" Nenhuma fruta registada no stock.")
         else:
             for f in self.frutas.values():
                 print(f"{f.id:<6} | {f.tipo:<15} | {f.especie:<15} | {f.peso:<15.2f}")
         print("=" * 60 + "\n")
 
     def adicionar_fruta(self):
-        print("\n--- ADICIONAR NOVA FRUTA AO ESTOQUE ---")
-        tipo = input("Tipo da fruta (ex: Maçã, Laranja): ").strip()
-        especie = input("Espécie da fruta (ex: Fuji, Gala): ").strip()
+        print("\n--- ADICIONAR NOVA FRUTA AO STOCK ---")
+        tipo = input("Tipo da fruta: ").strip()
+        especie = input("Espécie da fruta: ").strip()
         while True:
             try:
                 peso = float(input("Peso total para stock(kg): "))
@@ -39,11 +39,11 @@ class GestorFrutasBase:
                     continue
                 break
             except ValueError:
-                print("Por favor, introduz um numero válido.")
+                print("Introduz um numero válido.")
 
         nova_fruta = Fruta(self.proximo_id, tipo, especie, peso)
         self.frutas[self.proximo_id] = nova_fruta
-        print(f"\n[OK] Fruta '{tipo}' registada com sucesso com o ID: {self.proximo_id}!")
+        print(f"\nFruta '{tipo}' registada com sucesso com o ID: {self.proximo_id}!")
         self.proximo_id += 1
 
 
@@ -62,7 +62,7 @@ class GestorFrutasBase:
             print("\n" + "-" * 35)
             print(f"DETALHES DA FRUTA [ID: {fruta.id}]")
             print("-" * 35)
-            print(f"Tipo: {fruta.tipo}\nEspécie: {fruta.especie}\nPeso em estoque: {fruta.peso:.2f} kg")
+            print(f"Tipo: {fruta.tipo}\nEspécie: {fruta.especie}\nPeso em stock: {fruta.peso:.2f} kg")
             print("-" * 35)
         else:
             print(f"Fruta com o ID {f_id} não encontrada.")
@@ -85,7 +85,7 @@ class GestorFrutasBase:
             return
 
         print(f"\nA atualizar os dados da fruta ID {f_id}:")
-        print("Preenche os novos dados, todos os campos são obrigatórios:\n")
+        print("todos os campos são obrigatórios:\n")
 
         #pede o novo tipo , não aceita deixar vazio
         while True:
@@ -109,20 +109,20 @@ class GestorFrutasBase:
         while True:
             novo_peso = input("Novo Peso em kg: ").strip()
             if novo_peso == "":
-                print("Aviso: O peso não pode ficar vazio!")
+                print("O peso não pode ficar vazio!")
                 continue
 
             try:
                 peso_valido = float(novo_peso)
                 if peso_valido <= 0:
-                    print("Aviso: O peso não pode ser zero e negativo.")
+                    print("O peso não pode ser zero e negativo.")
                     continue
                 fruta.peso = peso_valido
                 break
             except ValueError:
-                print("Aviso: Por favor, introduz um número válido.")
+                print("Introduz um número válido.")
 
-        print(f"\n[OK] Fruta ID {f_id} atualizada com sucesso!")
+        print(f"\nFruta ID {f_id} atualizada com sucesso!")
 
     def apagar_fruta(self):
         print("\n--- APAGAR FRUTA ---")
@@ -140,4 +140,3 @@ class GestorFrutasBase:
             print(f"\n Fruta '{removida.tipo}'(ID:{f_id}) foi removida com sucesso !")
         else:
             print(f"Fruta com o ID {f_id} não encontrada.")
-            
