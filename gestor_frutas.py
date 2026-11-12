@@ -129,3 +129,15 @@ class GestorFrutasBase:
         if not self.frutas:
             print("Não existem frutas registadas para apagar.")
             return
+        try:
+            f_id = int(input("Digita o ID da fruta que vai apagar"))
+        except ValueError:
+            print("ID inválido")
+            return
+
+        if f_id in self.frutas:
+            removida = self.frutas.pop(f_id)
+            print(f"\n Fruta '{removida.tipo}'(ID:{f_id}) foi removida com sucesso !")
+        else:
+            print(f"Fruta com o ID {f_id} não encontrada.")
+            
