@@ -150,4 +150,20 @@ class Cliente:
         self.cidade = cidade
 
 class GestorFrutasCompleto(GestorFrutasBase):
-    pass
+    def fazer_pedido(self)
+        print("\n--- FAZER PEDIDO (COMPRA POR PESO) ---")
+        if not self.frutas:
+            print("Não há frutas no estoque para venda.")
+            return
+        try:
+            f_id = int(input("Digita o ID da fruta que o cliente quer comprar: "))
+        except ValueError:
+            print("ID inválido.")
+            return
+        fruta = self.frutas.get(f_id)
+        if not fruta:
+            print(f"Fruta com o ID {f_id} não existe no estoque.")
+            return
+        if fruta.peso <= 0:
+            print(f"A fruta '{fruta.tipo}' está esgotada!")
+            return
