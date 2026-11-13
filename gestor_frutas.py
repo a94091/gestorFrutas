@@ -150,7 +150,7 @@ class Cliente:
         self.cidade = cidade
 
 class GestorFrutasCompleto(GestorFrutasBase):
-    def fazer_pedido(self)
+    def fazer_pedido(self):
         print("\n--- FAZER PEDIDO (COMPRA POR PESO) ---")
         if not self.frutas:
             print("Não há frutas no estoque para venda.")
