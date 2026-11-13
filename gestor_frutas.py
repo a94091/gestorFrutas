@@ -140,3 +140,14 @@ class GestorFrutasBase:
             print(f"\n Fruta '{removida.tipo}'(ID:{f_id}) foi removida com sucesso !")
         else:
             print(f"Fruta com o ID {f_id} não encontrada.")
+
+
+class Cliente:
+    def __init__(self, nome, morada, telefone, cidade):
+        self.nome = nome
+        self.morada = morada
+        self.telefone = telefone
+        self.cidade = cidade
+
+class GestorFrutasCompleto(GestorFrutasBase):
+    pass
