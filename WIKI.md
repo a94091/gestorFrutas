@@ -3,8 +3,20 @@
 Bem vindo a documentação oficial do projeto **Gestor de frutas**.Esta wiki tem como objetivo na apresentação das ideias e práticas no desenvolvimento do software. 
 
 ---
+# Índice da wiki
 
-## :dart: 1. O que é o projeto ?
+1. [:dart: 1. O que é o projeto ?](#seccao-1)
+2. [:file_folder: 2. Estrutura de ficheiros](#seccao-2)
+3. [:building_construction: 3. Arquitetura e Estruturas de Dados](#seccao-3)
+4. [:desktop_computer: 4. Interface do Utlizador](#seccao-4)
+5. [⚖️ 5. Regras do Gestor e Validações](#seccao-5)
+6. [:hammer_and_wrench: 6. Guia Git para a Equipa(Cheat-Sheet)](#seccao-6)
+7. [:busts_in_silhouette: 7. Divisão de Trabalho](#seccao-7)
+
+
+---
+
+## <a id="seccao-1"></a>:dart: 1. O que é o projeto ?
 O ***Sistema de Gestão de frutas*** é uma aplicação desenvolvida em python executada em linhas de comandos (CLI).Criado para simular a gestão de um empresa fornecedora alimenticia , que distribui frutas para estabelecimentos e clientes.
 
 ### Objetivos:
@@ -14,7 +26,7 @@ O ***Sistema de Gestão de frutas*** é uma aplicação desenvolvida em python e
 
 ---
 
-## :file_folder: 2. Estrutura de ficheiros
+## <a id="seccao-2"></a>:file_folder: 2. Estrutura de ficheiros
 O repositório é constitído desta forma:
 
 ```text
@@ -27,7 +39,7 @@ gestorFrutas/
 
 ---
 
-## :building_construction: 3. Arquitetura e Estruturas de Dados
+## <a id="seccao-3"></a>:building_construction: 3. Arquitetura e Estruturas de Dados
 
 ### 3.1. Paradigma Utilizado
 O projeto foi criado com base sob o paradigma de **Programação Orientada a Objetos (POO)**.
@@ -54,7 +66,7 @@ O projeto foi criado com base sob o paradigma de **Programação Orientada a Obj
 > Ainda está á ser pensado como será desenvolvido.
 
 ---
-## :desktop_computer: 4. Interface do Utlizador
+## <a id="seccao-4"></a>:desktop_computer: 4. Interface do Utlizador
 
 ### Menu Princiapal
 
@@ -80,7 +92,7 @@ Escolhe uma opção: _
 ```
 ---
 
-## ⚖️ 5. Regras do Gestor e Validações
+##  <a id="seccao-5"></a> ⚖️ 5. Regras do Gestor e Validações
 - **IDs Automáticos:** O sistema gera IDs sequenciais incrementais (`proximo_id += 1`).
 - **Validação de Peso:** Não são aceites valores de peso negativos ou texto inválido.
 - **Venda / Pedido:** 
@@ -90,7 +102,7 @@ Escolhe uma opção: _
 
 ---
 
-## :hammer_and_wrench: 6. Guia Git para a Equipa (Cheat-Sheet)
+## <a id="seccao-6"></a> :hammer_and_wrench: 6. Guia Git para a Equipa (Cheat-Sheet)
 
 Para manter o repositório sincronizado e evitar conflitos de código entre os colegas, se faz os seguintes passos:
 
@@ -123,8 +135,8 @@ git push ou git push origin main
 
 ---
 
-## :busts_in_silhouette: 7. Divisão de Trabalho
+## <a id="seccao-7"></a>:busts_in_silhouette: 7. Divisão de Trabalho
 - **Artur:** classe `Fruta`, grelha de frutas com as suas caracteristicas e operações CRUD de estoque.
-- **Pessoa 2:** Criação da classe `Cliente`, implementação do fluxo de pedidos/vendas e ciclo do menu interativo da aplicação.
+- **Daniel:** Criação da classe `Cliente`, implementação do fluxo de pedidos/vendas e ciclo do menu interativo da aplicação.
 
 
