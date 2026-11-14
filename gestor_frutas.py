@@ -179,4 +179,5 @@ class GestorFrutasCompleto(GestorFrutasBase):
                     print(f"Estoque insuficiente! Apenas temos {fruta.peso:.2f} kg disponíveis.")
                     continue
                 break
-            
+            except ValueError:
+                print("Por favor, introduz um número válido.")
