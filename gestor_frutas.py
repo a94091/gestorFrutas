@@ -193,6 +193,8 @@ class GestorFrutasCompleto(GestorFrutasBase):
         
         print("\n" + "=" * 45)
         print(" PEDIDO CONCLUÍDO COM SUCESSO! ")
+        print("=" * 45)
         print(f"Cliente: {cliente.nome}\nTelefone: {cliente.telefone}")
         print(f"Morada/Cidade: {cliente.morada}, {cliente.cidade}")
         print(f"Fruta: {fruta.tipo} ({fruta.especie})\nPeso Comprado: {peso_compra:.2f} kg\nNovo Estoque: {fruta.peso:.2f} kg")
+        print("=" * 45)
