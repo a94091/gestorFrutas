@@ -191,4 +191,8 @@ class GestorFrutasCompleto(GestorFrutasBase):
         cliente = Cliente(nome, morada, telefone, cidade)
         fruta.peso -= peso_compra
         
-        
+        print("\n" + "=" * 45)
+        print(" PEDIDO CONCLUÍDO COM SUCESSO! ")
+        print(f"Cliente: {cliente.nome}\nTelefone: {cliente.telefone}")
+        print(f"Morada/Cidade: {cliente.morada}, {cliente.cidade}")
+        print(f"Fruta: {fruta.tipo} ({fruta.especie})\nPeso Comprado: {peso_compra:.2f} kg\nNovo Estoque: {fruta.peso:.2f} kg")
