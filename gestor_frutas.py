@@ -167,3 +167,16 @@ class GestorFrutasCompleto(GestorFrutasBase):
         if fruta.peso <= 0:
             print(f"A fruta '{fruta.tipo}' está esgotada!")
             return
+        print(f"Fruta escolhida: {fruta.tipo} ({fruta.especie})")
+        print(f"Estoque disponível: {fruta.peso:.2f} kg")
+        while True:
+            try:
+                peso_compra = float(input("\nQuantos quilos o cliente vai comprar? "))
+                if peso_compra <= 0:
+                    print("O peso deve ser maior que zero.")
+                    continue
+                if peso_compra > fruta.peso:
+                    print(f"Estoque insuficiente! Apenas temos {fruta.peso:.2f} kg disponíveis.")
+                    continue
+                break
+            
