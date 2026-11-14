@@ -181,3 +181,14 @@ class GestorFrutasCompleto(GestorFrutasBase):
                 break
             except ValueError:
                 print("Por favor, introduz um número válido.")
+
+        print("\n-- DADOS DO CLIENTE --")
+        nome = input("Nome: ").strip()
+        morada = input("Morada: ").strip()
+        telefone = input("Telefone: ").strip()
+        cidade = input("Cidade: ").strip()
+        
+        cliente = Cliente(nome, morada, telefone, cidade)
+        fruta.peso -= peso_compra
+        
+        
