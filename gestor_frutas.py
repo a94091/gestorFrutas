@@ -215,3 +215,7 @@ class GestorFrutasCompleto(GestorFrutasBase):
             else:
                 print("Opção inválida! Tenta novamente.")
             input("\nPressiona ENTER para continuar...")
+
+if __name__ == "__main__":
+    gestor = GestorFrutasCompleto()
+    gestor.iniciar()
