@@ -198,3 +198,20 @@ class GestorFrutasCompleto(GestorFrutasBase):
         print(f"Morada/Cidade: {cliente.morada}, {cliente.cidade}")
         print(f"Fruta: {fruta.tipo} ({fruta.especie})\nPeso Comprado: {peso_compra:.2f} kg\nNovo Estoque: {fruta.peso:.2f} kg")
         print("=" * 45)
+
+        def iniciar(self):
+        while True:
+            self.mostrar_grelha()
+            print("1. Adicionar Fruta ao Estoque\n2. Ver Fruta (por ID)\n3. Atualizar Fruta\n4. Apagar Fruta\n5. Fazer Pedido (Venda ao Cliente)\n0. Sair")
+            opcao = input("\nEscolhe uma opção: ").strip()
+            if opcao == "1": self.adicionar_fruta()
+            elif opcao == "2": self.ver_fruta()
+            elif opcao == "3": self.atualizar_fruta()
+            elif opcao == "4": self.apagar_fruta()
+            elif opcao == "5": self.fazer_pedido()
+            elif opcao == "0":
+                print("\nA encerrar o gestor... Até logo!")
+                break
+            else:
+                print("Opção inválida! Tenta novamente.")
+            input("\nPressiona ENTER para continuar...")
