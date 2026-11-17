@@ -75,6 +75,18 @@ class GestorFrutasBase:
          
 
     def adicionar_fruta(self):
+
+        """Esta função adiciona as frutas com os seus atributos 
+        Primeiro se insere o nome da fruta,de seguida a espécie e peso
+        
+        .. warning::
+            O peso não pode ser e inferior e igual a zero
+
+        :return: Nome da fruta e ID 
+        :rtype: string e inteiro
+        """
+
+
         print("\n--- ADICIONAR NOVA FRUTA AO STOCK ---")
         tipo = input("Tipo da fruta: ").strip()
         especie = input("Espécie da fruta: ").strip()
