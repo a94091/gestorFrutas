@@ -2,6 +2,18 @@
 #Projeto: Sistema de Gestão de Frutas e Vendas
 
 class Fruta:
+    """Classe que representa uma fruta individual no estoque.
+
+    :param id_fruta: Identificador numérico único da fruta no sistema.
+    :type id_fruta: int
+    :param tipo: Nome/tipo comum da fruta (ex: Maçã, Laranja, Pera).
+    :type tipo: str
+    :param especie: Variedade ou espécie específica da fruta (ex: Gala, Fuji).
+    :type especie: str
+    :param peso: Quantidade total em estoque disponível em quilogramas (kg).
+    :type peso: float
+    """
+
     def __init__(self, id_fruta, tipo, especie, peso):
         self.id = id_fruta
         self.tipo = tipo
