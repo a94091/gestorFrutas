@@ -13,3 +13,18 @@ Aplicação de linha de comandos feita em Python para gerir o inventário de fru
   * Verifica a disponibilidade e o peso em stock.
   * Recolhe os dados do cliente (nome, morada, telefone e cidade).
   * Tira automaticamente o peso comprado ao stock disponível e mostra um resumo do pedido.
+
+## Como Executar
+
+### Pré-requisitos
+* **Python** instalado no sistema.
+
+### Como iniciar o programa
+1. Guarda o código `gestor_frutas.py` numa pasta.
+2. Abre a linha de comandos na pasta onde guardaste o ficheiro.
+3. Executa o seguinte comando:
+
+```bash
+python gestor_frutas.py
+```
+
