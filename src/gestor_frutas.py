@@ -1,20 +1,28 @@
 #gestor_frutas.py
 #Projeto: Sistema de Gestão de Frutas e Vendas
 
-class Fruta:
-    """Classe que representa uma fruta individual no estoque.
 
-    :param id_fruta: Identificador numérico único da fruta no sistema.
+"""Sistema de Gestão de Frutas e Vendas em terminal (CLI).
+
+:Date: nov, 2026
+:Version: 1.1
+:Authors: Artur Ferreira, Daniel Mikhelyev, Tómas Massano
+"""
+
+class Fruta:
+    """Representa uma fruta registada no estoque.
+
+    :param id_fruta: ID numérico único da fruta.
     :type id_fruta: int
-    :param tipo: Nome/tipo comum da fruta (ex: Maçã, Laranja, Pera).
+    :param tipo: Nome da fruta (ex: Maçã, Laranja).
     :type tipo: str
-    :param especie: Variedade ou espécie específica da fruta (ex: Gala, Fuji).
+    :param especie: Variedade da fruta (ex: Gala, Fuji).
     :type especie: str
-    :param peso: Quantidade total em estoque disponível em quilogramas (kg).
+    :param peso: Quantidade em estoque (kg).
     :type peso: float
     """
 
-    def __init__(self, id_fruta, tipo, especie, peso):
+def __init__(self, id_fruta, tipo, especie, peso):
         self.id = id_fruta
         self.tipo = tipo
         self.especie = especie
@@ -22,11 +30,37 @@ class Fruta:
 
 
 class GestorFrutasBase:
+
+    """Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o
+    utilizador ver.
+
+    Quando uma fruta é criada, esta recebe um ID para a identificar 
+
+    :param frutas: É a lista que guarda as frutas
+    :type frutas: list
+    :param proximo_id: É o organizador de IDs em que a primeira fruta começa com o ID 1 
+    :type proximo_id: int
+
+    """
+
     def __init__(self):
         self.frutas = {}
         self.proximo_id = 1
-
+    
     def mostrar_grelha(self):
+        
+        """Esta função faz construção real da grelha de frutas 
+        e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.
+
+        .. note::
+            Se não houver nenhuma fruta registada no stock mostra uma 
+            mensagem de aviso 
+
+        :return: A grelha
+        :rtype: strings, floats e inteiros
+        """
+
+
         print("\n" + "=" * 60)
         print(" STOCK DISPONÍVEL - GRELHA DE FRUTAS - ")
         print("=" * 60)
@@ -38,6 +72,7 @@ class GestorFrutasBase:
             for f in self.frutas.values():
                 print(f"{f.id:<6} | {f.tipo:<15} | {f.especie:<15} | {f.peso:<15.2f}")
         print("=" * 60 + "\n")
+         
 
     def adicionar_fruta(self):
         print("\n--- ADICIONAR NOVA FRUTA AO STOCK ---")

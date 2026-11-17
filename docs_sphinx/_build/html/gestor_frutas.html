@@ -35,6 +35,18 @@
             
   <section id="module-gestor_frutas">
 <span id="gestor-frutas-module"></span><h1>gestor_frutas module<a class="headerlink" href="#module-gestor_frutas" title="Link to this heading">¶</a></h1>
+<p>Sistema de Gestão de Frutas e Vendas em terminal (CLI).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nov, 2026</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>1.1</p>
+</dd>
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Artur Ferreira, Daniel Mikhelyev, Tómas Massano</p>
+</dd>
+</dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="gestor_frutas.Cliente">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">Cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cidade</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#Cliente"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.Cliente" title="Link to this definition">¶</a></dt>
@@ -43,16 +55,16 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gestor_frutas.Fruta">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">Fruta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_fruta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tipo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">especie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peso</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#Fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.Fruta" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">Fruta</span></span><a class="reference internal" href="_modules/gestor_frutas.html#Fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.Fruta" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Classe que representa uma fruta individual no estoque.</p>
+<p>Representa uma fruta registada no estoque.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>id_fruta</strong> (<em>int</em>) – Identificador numérico único da fruta no sistema.</p></li>
-<li><p><strong>tipo</strong> (<em>str</em>) – Nome/tipo comum da fruta (ex: Maçã, Laranja, Pera).</p></li>
-<li><p><strong>especie</strong> (<em>str</em>) – Variedade ou espécie específica da fruta (ex: Gala, Fuji).</p></li>
-<li><p><strong>peso</strong> (<em>float</em>) – Quantidade total em estoque disponível em quilogramas (kg).</p></li>
+<li><p><strong>id_fruta</strong> (<em>int</em>) – ID numérico único da fruta.</p></li>
+<li><p><strong>tipo</strong> (<em>str</em>) – Nome da fruta (ex: Maçã, Laranja).</p></li>
+<li><p><strong>especie</strong> (<em>str</em>) – Variedade da fruta (ex: Gala, Fuji).</p></li>
+<li><p><strong>peso</strong> (<em>float</em>) – Quantidade em estoque (kg).</p></li>
 </ul>
 </dd>
 </dl>
@@ -62,6 +74,17 @@
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">GestorFrutasBase</span></span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o
+utilizador ver.</p>
+<p>Quando uma fruta é criada, esta recebe um ID para a identificar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frutas</strong> (<em>list</em>) – É a lista que guarda as frutas</p></li>
+<li><p><strong>proximo_id</strong> (<em>int</em>) – É o organizador de IDs em que a primeira fruta começa com o ID 1</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.adicionar_fruta">
 <span class="sig-name descname"><span class="pre">adicionar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.adicionar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.adicionar_fruta" title="Link to this definition">¶</a></dt>
@@ -80,7 +103,22 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.mostrar_grelha">
 <span class="sig-name descname"><span class="pre">mostrar_grelha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.mostrar_grelha"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.mostrar_grelha" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Esta função faz construção real da grelha de frutas 
+e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se não houver nenhuma fruta registada no stock mostra uma 
+mensagem de aviso</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A grelha</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>strings, floats e inteiros</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.ver_fruta">

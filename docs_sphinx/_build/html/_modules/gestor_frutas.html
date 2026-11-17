@@ -35,39 +35,73 @@
 <span></span><span class="c1">#gestor_frutas.py</span>
 <span class="c1">#Projeto: Sistema de Gestão de Frutas e Vendas</span>
 
+
+<span class="sd">&quot;&quot;&quot;Sistema de Gestão de Frutas e Vendas em terminal (CLI).</span>
+
+<span class="sd">:Date: nov, 2026</span>
+<span class="sd">:Version: 1.1</span>
+<span class="sd">:Authors: Artur Ferreira, Daniel Mikhelyev, Tómas Massano</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="Fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.Fruta">[documentos]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Fruta</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Classe que representa uma fruta individual no estoque.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Representa uma fruta registada no estoque.</span>
 
-<span class="sd">    :param id_fruta: Identificador numérico único da fruta no sistema.</span>
+<span class="sd">    :param id_fruta: ID numérico único da fruta.</span>
 <span class="sd">    :type id_fruta: int</span>
-<span class="sd">    :param tipo: Nome/tipo comum da fruta (ex: Maçã, Laranja, Pera).</span>
+<span class="sd">    :param tipo: Nome da fruta (ex: Maçã, Laranja).</span>
 <span class="sd">    :type tipo: str</span>
-<span class="sd">    :param especie: Variedade ou espécie específica da fruta (ex: Gala, Fuji).</span>
+<span class="sd">    :param especie: Variedade da fruta (ex: Gala, Fuji).</span>
 <span class="sd">    :type especie: str</span>
-<span class="sd">    :param peso: Quantidade total em estoque disponível em quilogramas (kg).</span>
+<span class="sd">    :param peso: Quantidade em estoque (kg).</span>
 <span class="sd">    :type peso: float</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_fruta</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">especie</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
+
+<span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_fruta</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">especie</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">id_fruta</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tipo</span> <span class="o">=</span> <span class="n">tipo</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">especie</span> <span class="o">=</span> <span class="n">especie</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">peso</span> <span class="o">=</span> <span class="n">peso</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">peso</span> <span class="o">=</span> <span class="n">peso</span>
 
 
 <div class="viewcode-block" id="GestorFrutasBase">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase">[documentos]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">GestorFrutasBase</span><span class="p">:</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o</span>
+<span class="sd">    utilizador ver.</span>
+
+<span class="sd">    Quando uma fruta é criada, esta recebe um ID para a identificar </span>
+
+<span class="sd">    :param frutas: É a lista que guarda as frutas</span>
+<span class="sd">    :type frutas: list</span>
+<span class="sd">    :param proximo_id: É o organizador de IDs em que a primeira fruta começa com o ID 1 </span>
+<span class="sd">    :type proximo_id: int</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span> <span class="o">=</span> <span class="mi">1</span>
-
+    
 <div class="viewcode-block" id="GestorFrutasBase.mostrar_grelha">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.mostrar_grelha">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">mostrar_grelha</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Esta função faz construção real da grelha de frutas </span>
+<span class="sd">        e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Se não houver nenhuma fruta registada no stock mostra uma </span>
+<span class="sd">            mensagem de aviso </span>
+
+<span class="sd">        :return: A grelha</span>
+<span class="sd">        :rtype: strings, floats e inteiros</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; STOCK DISPONÍVEL - GRELHA DE FRUTAS - &quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
@@ -80,6 +114,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">id</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">tipo</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">especie</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">&lt;15.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
+         
 
 <div class="viewcode-block" id="GestorFrutasBase.adicionar_fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.adicionar_fruta">[documentos]</a>
