@@ -138,6 +138,8 @@ class GestorFrutasBase:
             print(f"Fruta com o ID {f_id} não encontrada.")
 
     def atualizar_fruta(self):
+        """Esta função atualiza dados de uma fruta existente atraves da inserção do ID 
+        """
 
         print("\n--- ATUALIZAR FRUTA ---")
         if not self.frutas:
