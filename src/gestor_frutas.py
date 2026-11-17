@@ -77,12 +77,12 @@ class GestorFrutasBase:
     def adicionar_fruta(self):
 
         """Esta função adiciona as frutas com os seus atributos 
-        Primeiro se insere o nome da fruta,de seguida a espécie e peso
+        Primeiro se insere o tipo, de seguida a espécie e peso
         
         .. warning::
             O peso não pode ser e inferior e igual a zero
 
-        :return: Nome da fruta e ID 
+        :return: fruta e ID 
         :rtype: string e inteiro
         """
 
@@ -107,6 +107,17 @@ class GestorFrutasBase:
 
 
     def ver_fruta(self):
+        """Esta função faz que o utilizador possa consultar 
+           a fruta inserida recentemente atraves do ID inserido 
+        .. note::
+            Se não houver nenhuma fruta registada no stock e id invalido mostra uma 
+            mensagem de aviso 
+
+        :return: ID, tipo, espécie e peso 
+        :rtype: strings, floats e inteiros
+        """
+
+           
         print("\n--- CONSULTAR FRUTA POR ID ---")
         if not self.frutas:
             print("Não há frutas no stock")
@@ -127,6 +138,7 @@ class GestorFrutasBase:
             print(f"Fruta com o ID {f_id} não encontrada.")
 
     def atualizar_fruta(self):
+
         print("\n--- ATUALIZAR FRUTA ---")
         if not self.frutas:
             print("Não há frutas registadas para atualizar.")

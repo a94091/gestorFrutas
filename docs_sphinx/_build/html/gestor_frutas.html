@@ -89,14 +89,14 @@ utilizador ver.</p>
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.adicionar_fruta">
 <span class="sig-name descname"><span class="pre">adicionar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.adicionar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.adicionar_fruta" title="Link to this definition">¶</a></dt>
 <dd><p>Esta função adiciona as frutas com os seus atributos 
-Primeiro se insere o nome da fruta,de seguida a espécie e peso</p>
+Primeiro se insere o tipo, de seguida a espécie e peso</p>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
 <p>O peso não pode ser e inferior e igual a zero</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Retorno<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Nome da fruta e ID</p>
+<dd class="field-odd"><p>fruta e ID</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
 <dd class="field-even"><p>string e inteiro</p>
@@ -137,7 +137,24 @@ mensagem de aviso</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.ver_fruta">
 <span class="sig-name descname"><span class="pre">ver_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.ver_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.ver_fruta" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Esta função faz que o utilizador possa consultar </dt><dd><p>a fruta inserida recentemente atraves do ID inserido</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se não houver nenhuma fruta registada no stock e id invalido mostra uma 
+mensagem de aviso</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ID, tipo, espécie e peso</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>strings, floats e inteiros</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
