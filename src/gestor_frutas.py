@@ -1,8 +1,28 @@
 #gestor_frutas.py
 #Projeto: Sistema de Gestão de Frutas e Vendas
 
+
+"""Sistema de Gestão de Frutas e Vendas em terminal (CLI).
+
+:Date: nov, 2026
+:Version: 1.1
+:Authors: Artur Ferreira, Daniel Mikhelyev, Tómas Massano
+"""
+
 class Fruta:
-    def __init__(self, id_fruta, tipo, especie, peso):
+    """Representa uma fruta registada no estoque.
+
+    :param id_fruta: ID numérico único da fruta.
+    :type id_fruta: int
+    :param tipo: Nome da fruta (ex: Maçã, Laranja).
+    :type tipo: str
+    :param especie: Variedade da fruta (ex: Gala, Fuji).
+    :type especie: str
+    :param peso: Quantidade em estoque (kg).
+    :type peso: float
+    """
+
+def __init__(self, id_fruta, tipo, especie, peso):
         self.id = id_fruta
         self.tipo = tipo
         self.especie = especie
@@ -10,11 +30,37 @@ class Fruta:
 
 
 class GestorFrutasBase:
+
+    """Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o
+    utilizador ver.
+
+    Quando uma fruta é criada, esta recebe um ID para a identificar 
+
+    :param frutas: É a lista que guarda as frutas
+    :type frutas: list
+    :param proximo_id: É o organizador de IDs em que a primeira fruta começa com o ID 1 
+    :type proximo_id: int
+
+    """
+
     def __init__(self):
         self.frutas = {}
         self.proximo_id = 1
-
+    
     def mostrar_grelha(self):
+        
+        """Esta função faz construção real da grelha de frutas 
+        e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.
+
+        .. note::
+            Se não houver nenhuma fruta registada no stock mostra uma 
+            mensagem de aviso 
+
+        :return: A grelha
+        :rtype: strings, floats e inteiros
+        """
+
+
         print("\n" + "=" * 60)
         print(" STOCK DISPONÍVEL - GRELHA DE FRUTAS - ")
         print("=" * 60)
@@ -26,8 +72,21 @@ class GestorFrutasBase:
             for f in self.frutas.values():
                 print(f"{f.id:<6} | {f.tipo:<15} | {f.especie:<15} | {f.peso:<15.2f}")
         print("=" * 60 + "\n")
+         
 
     def adicionar_fruta(self):
+
+        """Esta função adiciona as frutas com os seus atributos 
+        Primeiro se insere o tipo, de seguida a espécie e peso
+        
+        .. warning::
+            O peso não pode ser e inferior e igual a zero
+
+        :return: fruta e ID 
+        :rtype: string e inteiro
+        """
+
+
         print("\n--- ADICIONAR NOVA FRUTA AO STOCK ---")
         tipo = input("Tipo da fruta: ").strip()
         especie = input("Espécie da fruta: ").strip()
@@ -48,6 +107,17 @@ class GestorFrutasBase:
 
 
     def ver_fruta(self):
+        """Esta função faz que o utilizador possa consultar 
+           a fruta inserida recentemente atraves do ID inserido 
+        .. note::
+            Se não houver nenhuma fruta registada no stock e id invalido mostra uma 
+            mensagem de aviso 
+
+        :return: ID, tipo, espécie e peso 
+        :rtype: strings, floats e inteiros
+        """
+
+           
         print("\n--- CONSULTAR FRUTA POR ID ---")
         if not self.frutas:
             print("Não há frutas no stock")
@@ -68,6 +138,9 @@ class GestorFrutasBase:
             print(f"Fruta com o ID {f_id} não encontrada.")
 
     def atualizar_fruta(self):
+        """Esta função atualiza dados de uma fruta existente atraves da inserção do ID 
+        """
+
         print("\n--- ATUALIZAR FRUTA ---")
         if not self.frutas:
             print("Não há frutas registadas para atualizar.")
@@ -167,3 +240,55 @@ class GestorFrutasCompleto(GestorFrutasBase):
         if fruta.peso <= 0:
             print(f"A fruta '{fruta.tipo}' está esgotada!")
             return
+        print(f"Fruta escolhida: {fruta.tipo} ({fruta.especie})")
+        print(f"Estoque disponível: {fruta.peso:.2f} kg")
+        while True:
+            try:
+                peso_compra = float(input("\nQuantos quilos o cliente vai comprar? "))
+                if peso_compra <= 0:
+                    print("O peso deve ser maior que zero.")
+                    continue
+                if peso_compra > fruta.peso:
+                    print(f"Estoque insuficiente! Apenas temos {fruta.peso:.2f} kg disponíveis.")
+                    continue
+                break
+            except ValueError:
+                print("Por favor, introduz um número válido.")
+
+        print("\n-- DADOS DO CLIENTE --")
+        nome = input("Nome: ").strip()
+        morada = input("Morada: ").strip()
+        telefone = input("Telefone: ").strip()
+        cidade = input("Cidade: ").strip()
+        
+        cliente = Cliente(nome, morada, telefone, cidade)
+        fruta.peso -= peso_compra
+        
+        print("\n" + "=" * 45)
+        print(" PEDIDO CONCLUÍDO COM SUCESSO! ")
+        print("=" * 45)
+        print(f"Cliente: {cliente.nome}\nTelefone: {cliente.telefone}")
+        print(f"Morada/Cidade: {cliente.morada}, {cliente.cidade}")
+        print(f"Fruta: {fruta.tipo} ({fruta.especie})\nPeso Comprado: {peso_compra:.2f} kg\nNovo Estoque: {fruta.peso:.2f} kg")
+        print("=" * 45)
+
+    def iniciar(self):
+        while True:
+            self.mostrar_grelha()
+            print("1. Adicionar Fruta ao Estoque\n2. Ver Fruta (por ID)\n3. Atualizar Fruta\n4. Apagar Fruta\n5. Fazer Pedido (Venda ao Cliente)\n0. Sair")
+            opcao = input("\nEscolhe uma opção: ").strip()
+            if opcao == "1": self.adicionar_fruta()
+            elif opcao == "2": self.ver_fruta()
+            elif opcao == "3": self.atualizar_fruta()
+            elif opcao == "4": self.apagar_fruta()
+            elif opcao == "5": self.fazer_pedido()
+            elif opcao == "0":
+                print("\nA encerrar o gestor... Até logo!")
+                break
+            else:
+                print("Opção inválida! Tenta novamente.")
+            input("\nPressiona ENTER para continuar...")
+
+if __name__ == "__main__":
+    gestor = GestorFrutasCompleto()
+    gestor.iniciar()

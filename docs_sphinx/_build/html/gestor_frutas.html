@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="pt" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gestor_frutas module &#8212; Documentação Gestor de Frutas </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=103ffe9a"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/translations.js?v=beaedd51"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="prev" title="src documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gestor_frutas">
+<span id="gestor-frutas-module"></span><h1>gestor_frutas module<a class="headerlink" href="#module-gestor_frutas" title="Link to this heading">¶</a></h1>
+<p>Sistema de Gestão de Frutas e Vendas em terminal (CLI).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Date<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nov, 2026</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>1.1</p>
+</dd>
+<dt class="field-odd">Authors<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Artur Ferreira, Daniel Mikhelyev, Tómas Massano</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="gestor_frutas.Cliente">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">Cliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cidade</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#Cliente"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.Cliente" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gestor_frutas.Fruta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">Fruta</span></span><a class="reference internal" href="_modules/gestor_frutas.html#Fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.Fruta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representa uma fruta registada no estoque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_fruta</strong> (<em>int</em>) – ID numérico único da fruta.</p></li>
+<li><p><strong>tipo</strong> (<em>str</em>) – Nome da fruta (ex: Maçã, Laranja).</p></li>
+<li><p><strong>especie</strong> (<em>str</em>) – Variedade da fruta (ex: Gala, Fuji).</p></li>
+<li><p><strong>peso</strong> (<em>float</em>) – Quantidade em estoque (kg).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">GestorFrutasBase</span></span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o
+utilizador ver.</p>
+<p>Quando uma fruta é criada, esta recebe um ID para a identificar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frutas</strong> (<em>list</em>) – É a lista que guarda as frutas</p></li>
+<li><p><strong>proximo_id</strong> (<em>int</em>) – É o organizador de IDs em que a primeira fruta começa com o ID 1</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.adicionar_fruta">
+<span class="sig-name descname"><span class="pre">adicionar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.adicionar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.adicionar_fruta" title="Link to this definition">¶</a></dt>
+<dd><p>Esta função adiciona as frutas com os seus atributos 
+Primeiro se insere o tipo, de seguida a espécie e peso</p>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>O peso não pode ser e inferior e igual a zero</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fruta e ID</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>string e inteiro</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.apagar_fruta">
+<span class="sig-name descname"><span class="pre">apagar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.apagar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.apagar_fruta" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.atualizar_fruta">
+<span class="sig-name descname"><span class="pre">atualizar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.atualizar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.atualizar_fruta" title="Link to this definition">¶</a></dt>
+<dd><p>Esta função atualiza dados de uma fruta existente atraves da inserção do ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.mostrar_grelha">
+<span class="sig-name descname"><span class="pre">mostrar_grelha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.mostrar_grelha"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.mostrar_grelha" title="Link to this definition">¶</a></dt>
+<dd><p>Esta função faz construção real da grelha de frutas 
+e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se não houver nenhuma fruta registada no stock mostra uma 
+mensagem de aviso</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A grelha</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>strings, floats e inteiros</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.ver_fruta">
+<span class="sig-name descname"><span class="pre">ver_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.ver_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.ver_fruta" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Esta função faz que o utilizador possa consultar </dt><dd><p>a fruta inserida recentemente atraves do ID inserido</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se não houver nenhuma fruta registada no stock e id invalido mostra uma 
+mensagem de aviso</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ID, tipo, espécie e peso</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>strings, floats e inteiros</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasCompleto">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gestor_frutas.</span></span><span class="sig-name descname"><span class="pre">GestorFrutasCompleto</span></span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasCompleto"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasCompleto" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gestor_frutas.GestorFrutasBase" title="gestor_frutas.GestorFrutasBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">GestorFrutasBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasCompleto.fazer_pedido">
+<span class="sig-name descname"><span class="pre">fazer_pedido</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasCompleto.fazer_pedido"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasCompleto.fazer_pedido" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gestor_frutas.GestorFrutasCompleto.iniciar">
+<span class="sig-name descname"><span class="pre">iniciar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasCompleto.iniciar"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasCompleto.iniciar" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Gestor de Frutas</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gestor_frutas module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gestor_frutas.Cliente"><code class="docutils literal notranslate"><span class="pre">Cliente</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestor_frutas.Fruta"><code class="docutils literal notranslate"><span class="pre">Fruta</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase.adicionar_fruta"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase.adicionar_fruta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase.apagar_fruta"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase.apagar_fruta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase.atualizar_fruta"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase.atualizar_fruta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase.mostrar_grelha"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase.mostrar_grelha()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasBase.ver_fruta"><code class="docutils literal notranslate"><span class="pre">GestorFrutasBase.ver_fruta()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gestor_frutas.GestorFrutasCompleto"><code class="docutils literal notranslate"><span class="pre">GestorFrutasCompleto</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasCompleto.fazer_pedido"><code class="docutils literal notranslate"><span class="pre">GestorFrutasCompleto.fazer_pedido()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestor_frutas.GestorFrutasCompleto.iniciar"><code class="docutils literal notranslate"><span class="pre">GestorFrutasCompleto.iniciar()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="capítulo anterior">src documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Artur Ferreira, Daniel Mikhelyev, Tómas Massano.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/gestor_frutas.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
