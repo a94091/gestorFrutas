@@ -36,17 +36,17 @@
 <span class="c1">#Projeto: Sistema de Gestão de Frutas e Vendas</span>
 
 
-<span class="sd">&quot;&quot;&quot;Sistema de Gestão de Frutas e Vendas em terminal (CLI).</span>
+<span class="sd">"""Sistema de Gestão de Frutas e Vendas em terminal (CLI).</span>
 
 <span class="sd">:Date: nov, 2026</span>
-<span class="sd">:Version: 1.1</span>
+<span class="sd">:Version: 1.2</span>
 <span class="sd">:Authors: Artur Ferreira, Daniel Mikhelyev, Tómas Massano</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <div class="viewcode-block" id="Fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.Fruta">[documentos]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Fruta</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Representa uma fruta registada no estoque.</span>
+<span class="w">    </span><span class="sd">"""Representa uma fruta registada no estoque.</span>
 
 <span class="sd">    :param id_fruta: ID numérico único da fruta.</span>
 <span class="sd">    :type id_fruta: int</span>
@@ -56,7 +56,7 @@
 <span class="sd">    :type especie: str</span>
 <span class="sd">    :param peso: Quantidade em estoque (kg).</span>
 <span class="sd">    :type peso: float</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    """</span></div>
 
 
 <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_fruta</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">especie</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
@@ -70,7 +70,7 @@
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase">[documentos]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">GestorFrutasBase</span><span class="p">:</span>
 
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o</span>
+<span class="w">    </span><span class="sd">"""Esta classe mostra a grelha de frutas quando o programa é executado e é a primeira coisa que o</span>
 <span class="sd">    utilizador ver.</span>
 
 <span class="sd">    Quando uma fruta é criada, esta recebe um ID para a identificar </span>
@@ -80,7 +80,7 @@
 <span class="sd">    :param proximo_id: É o organizador de IDs em que a primeira fruta começa com o ID 1 </span>
 <span class="sd">    :type proximo_id: int</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span> <span class="o">=</span> <span class="p">{}</span>
@@ -90,7 +90,7 @@
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.mostrar_grelha">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">mostrar_grelha</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Esta função faz construção real da grelha de frutas </span>
+<span class="w">        </span><span class="sd">"""Esta função faz construção real da grelha de frutas </span>
 <span class="sd">        e pocisionamento de cada atributo da fruta, onde mostra o ID, tipo, espécie e peso da fruta.</span>
 
 <span class="sd">        .. note::</span>
@@ -99,20 +99,20 @@
 
 <span class="sd">        :return: A grelha</span>
 <span class="sd">        :rtype: strings, floats e inteiros</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; STOCK DISPONÍVEL - GRELHA DE FRUTAS - &quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;ID&#39;</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Tipo&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Espécie&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Peso Disp. (kg)&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">" STOCK DISPONÍVEL - GRELHA DE FRUTAS - "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">'ID'</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">'Tipo'</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">'Espécie'</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">'Peso Disp. (kg)'</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Nenhuma fruta registada no stock.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">" Nenhuma fruta registada no stock."</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">id</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">tipo</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">especie</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">&lt;15.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">id</span><span class="si">:</span><span class="s2">&lt;6</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">tipo</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">especie</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">&lt;15.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span></div>
 
          
 
@@ -120,7 +120,7 @@
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.adicionar_fruta">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">adicionar_fruta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Esta função adiciona as frutas com os seus atributos </span>
+<span class="w">        </span><span class="sd">"""Esta função adiciona as frutas com os seus atributos </span>
 <span class="sd">        Primeiro se insere o tipo, de seguida a espécie e peso</span>
 <span class="sd">        </span>
 <span class="sd">        .. warning::</span>
@@ -128,25 +128,25 @@
 
 <span class="sd">        :return: fruta e ID </span>
 <span class="sd">        :rtype: string e inteiro</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- ADICIONAR NOVA FRUTA AO STOCK ---&quot;</span><span class="p">)</span>
-        <span class="n">tipo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Tipo da fruta: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">especie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Espécie da fruta: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- ADICIONAR NOVA FRUTA AO STOCK ---"</span><span class="p">)</span>
+        <span class="n">tipo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Tipo da fruta: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">especie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Espécie da fruta: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">peso</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Peso total para stock(kg): &quot;</span><span class="p">))</span>
+                <span class="n">peso</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Peso total para stock(kg): "</span><span class="p">))</span>
                 <span class="k">if</span> <span class="n">peso</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O peso não pode ser negativo.&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"O peso não pode ser negativo."</span><span class="p">)</span>
                     <span class="k">continue</span>
                 <span class="k">break</span>
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Introduz um numero válido.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Introduz um numero válido."</span><span class="p">)</span>
 
         <span class="n">nova_fruta</span> <span class="o">=</span> <span class="n">Fruta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">especie</span><span class="p">,</span> <span class="n">peso</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nova_fruta</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Fruta &#39;</span><span class="si">{</span><span class="n">tipo</span><span class="si">}</span><span class="s2">&#39; registada com sucesso com o ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Fruta '</span><span class="si">{</span><span class="n">tipo</span><span class="si">}</span><span class="s2">' registada com sucesso com o ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">proximo_id</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
 
@@ -154,7 +154,7 @@
 <div class="viewcode-block" id="GestorFrutasBase.ver_fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.ver_fruta">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">ver_fruta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Esta função faz que o utilizador possa consultar </span>
+<span class="w">        </span><span class="sd">"""Esta função faz que o utilizador possa consultar </span>
 <span class="sd">           a fruta inserida recentemente atraves do ID inserido </span>
 <span class="sd">        .. note::</span>
 <span class="sd">            Se não houver nenhuma fruta registada no stock e id invalido mostra uma </span>
@@ -162,110 +162,117 @@
 
 <span class="sd">        :return: ID, tipo, espécie e peso </span>
 <span class="sd">        :rtype: strings, floats e inteiros</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
            
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- CONSULTAR FRUTA POR ID ---&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- CONSULTAR FRUTA POR ID ---"</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não há frutas no stock&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Não há frutas no stock"</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digita o ID da fruta: &quot;</span><span class="p">))</span>
+            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digita o ID da fruta: "</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Id inválido.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Id inválido."</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="n">fruta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f_id</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">fruta</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DETALHES DA FRUTA [ID: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tipo: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="se">\n</span><span class="s2">Espécie: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="se">\n</span><span class="s2">Peso em stock: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"DETALHES DA FRUTA [ID: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tipo: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="se">\n</span><span class="s2">Espécie: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="se">\n</span><span class="s2">Peso em stock: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">35</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada.&quot;</span><span class="p">)</span></div>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada."</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GestorFrutasBase.atualizar_fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.atualizar_fruta">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">atualizar_fruta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Esta função atualiza dados de uma fruta existente atraves da inserção do ID </span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Esta função atualiza os atributos de uma fruta existente atraves da inserção do ID </span>
+<span class="sd">        </span>
+<span class="sd">        .. warning::</span>
+<span class="sd">                Vai aparecer um sinal de aviso caso for pressionar "Enter" </span>
+<span class="sd">                se o campo ainda estiver vazio e se o id for inválido</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- ATUALIZAR FRUTA ---&quot;</span><span class="p">)</span>
+<span class="sd">        :return: ID, tipo, espécie e peso atualizados</span>
+<span class="sd">        :rtype: strings, floats e inteiro</span>
+<span class="sd">        """</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- ATUALIZAR FRUTA ---"</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não há frutas registadas para atualizar.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Não há frutas registadas para atualizar."</span><span class="p">)</span>
             <span class="k">return</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digita o ID da fruta a atualizar: &quot;</span><span class="p">))</span>
+            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digita o ID da fruta a atualizar: "</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID inválido.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"ID inválido."</span><span class="p">)</span>
             <span class="k">return</span>
 
         <span class="n">fruta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f_id</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fruta</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada."</span><span class="p">)</span>
             <span class="k">return</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A atualizar os dados da fruta ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;todos os campos são obrigatórios:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">A atualizar os dados da fruta ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"todos os campos são obrigatórios:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="c1">#pede o novo tipo , não aceita deixar vazio</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">novo_tipo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo Tipo: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">novo_tipo</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aviso: O tipo não pode ficar vazio! Tenta novamente.&quot;</span><span class="p">)</span>
+            <span class="n">novo_tipo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Novo Tipo: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">novo_tipo</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Aviso: O tipo não pode ficar vazio! Tenta novamente."</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span> <span class="o">=</span> <span class="n">novo_tipo</span>
                 <span class="k">break</span>
 
        <span class="c1">#pede a nova especie , não aceita deixar vazio</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">nova_especie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nova Espécie: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">nova_especie</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aviso: A espécie não pode ficar vazia! Tenta novamente.&quot;</span><span class="p">)</span>
+            <span class="n">nova_especie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Nova Espécie: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">nova_especie</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Aviso: A espécie não pode ficar vazia! Tenta novamente."</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">fruta</span><span class="o">.</span><span class="n">especie</span> <span class="o">=</span> <span class="n">nova_especie</span>
                 <span class="k">break</span>
 
         <span class="c1"># 4.pede o novo peso não aceita deixar vazio, nem texto, nem zero e negativo</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">novo_peso</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Novo Peso em kg: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">novo_peso</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O peso não pode ficar vazio!&quot;</span><span class="p">)</span>
+            <span class="n">novo_peso</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Novo Peso em kg: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">novo_peso</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"O peso não pode ficar vazio!"</span><span class="p">)</span>
                 <span class="k">continue</span>
 
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">peso_valido</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">novo_peso</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">peso_valido</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O peso não pode ser zero e negativo.&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"O peso não pode ser zero e negativo."</span><span class="p">)</span>
                     <span class="k">continue</span>
                 <span class="n">fruta</span><span class="o">.</span><span class="n">peso</span> <span class="o">=</span> <span class="n">peso_valido</span>
                 <span class="k">break</span>
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Introduz um número válido.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Introduz um número válido."</span><span class="p">)</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Fruta ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> atualizada com sucesso!&quot;</span><span class="p">)</span></div>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Fruta ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> atualizada com sucesso!"</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GestorFrutasBase.apagar_fruta">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasBase.apagar_fruta">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">apagar_fruta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- APAGAR FRUTA ---&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- APAGAR FRUTA ---"</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não existem frutas registadas para apagar.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Não existem frutas registadas para apagar."</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digita o ID da fruta que vai apagar&quot;</span><span class="p">))</span>
+            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digita o ID da fruta que vai apagar"</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID inválido&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"ID inválido"</span><span class="p">)</span>
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="n">f_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
             <span class="n">removida</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">f_id</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Fruta &#39;</span><span class="si">{</span><span class="n">removida</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2">&#39;(ID:</span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2">) foi removida com sucesso !&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Fruta '</span><span class="si">{</span><span class="n">removida</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2">'(ID:</span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2">) foi removida com sucesso !"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada.&quot;</span><span class="p">)</span></div>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não encontrada."</span><span class="p">)</span></div>
 </div>
 
 
@@ -286,53 +293,53 @@
 <div class="viewcode-block" id="GestorFrutasCompleto.fazer_pedido">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasCompleto.fazer_pedido">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">fazer_pedido</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- FAZER PEDIDO (COMPRA POR PESO) ---&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- FAZER PEDIDO (COMPRA POR PESO) ---"</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não há frutas no estoque para venda.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Não há frutas no estoque para venda."</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digita o ID da fruta que o cliente quer comprar: &quot;</span><span class="p">))</span>
+            <span class="n">f_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digita o ID da fruta que o cliente quer comprar: "</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID inválido.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"ID inválido."</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="n">fruta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f_id</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fruta</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não existe no estoque.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta com o ID </span><span class="si">{</span><span class="n">f_id</span><span class="si">}</span><span class="s2"> não existe no estoque."</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">if</span> <span class="n">fruta</span><span class="o">.</span><span class="n">peso</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A fruta &#39;</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2">&#39; está esgotada!&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A fruta '</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2">' está esgotada!"</span><span class="p">)</span>
             <span class="k">return</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta escolhida: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estoque disponível: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta escolhida: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Estoque disponível: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg"</span><span class="p">)</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">peso_compra</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Quantos quilos o cliente vai comprar? &quot;</span><span class="p">))</span>
+                <span class="n">peso_compra</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Quantos quilos o cliente vai comprar? "</span><span class="p">))</span>
                 <span class="k">if</span> <span class="n">peso_compra</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O peso deve ser maior que zero.&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"O peso deve ser maior que zero."</span><span class="p">)</span>
                     <span class="k">continue</span>
                 <span class="k">if</span> <span class="n">peso_compra</span> <span class="o">&gt;</span> <span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estoque insuficiente! Apenas temos </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg disponíveis.&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Estoque insuficiente! Apenas temos </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg disponíveis."</span><span class="p">)</span>
                     <span class="k">continue</span>
                 <span class="k">break</span>
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Por favor, introduz um número válido.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Por favor, introduz um número válido."</span><span class="p">)</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-- DADOS DO CLIENTE --&quot;</span><span class="p">)</span>
-        <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nome: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">morada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Morada: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">telefone</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Telefone: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">cidade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Cidade: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">-- DADOS DO CLIENTE --"</span><span class="p">)</span>
+        <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Nome: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">morada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Morada: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">telefone</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Telefone: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">cidade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Cidade: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         
         <span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">morada</span><span class="p">,</span> <span class="n">telefone</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
         <span class="n">fruta</span><span class="o">.</span><span class="n">peso</span> <span class="o">-=</span> <span class="n">peso_compra</span>
         
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; PEDIDO CONCLUÍDO COM SUCESSO! &quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cliente: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="se">\n</span><span class="s2">Telefone: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">telefone</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Morada/Cidade: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">morada</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">cidade</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fruta: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">Peso Comprado: </span><span class="si">{</span><span class="n">peso_compra</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg</span><span class="se">\n</span><span class="s2">Novo Estoque: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span></div>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">" PEDIDO CONCLUÍDO COM SUCESSO! "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cliente: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="se">\n</span><span class="s2">Telefone: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">telefone</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Morada/Cidade: </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">morada</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">cliente</span><span class="o">.</span><span class="n">cidade</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fruta: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">tipo</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">especie</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">Peso Comprado: </span><span class="si">{</span><span class="n">peso_compra</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg</span><span class="se">\n</span><span class="s2">Novo Estoque: </span><span class="si">{</span><span class="n">fruta</span><span class="o">.</span><span class="n">peso</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GestorFrutasCompleto.iniciar">
@@ -340,23 +347,23 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">iniciar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">mostrar_grelha</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Adicionar Fruta ao Estoque</span><span class="se">\n</span><span class="s2">2. Ver Fruta (por ID)</span><span class="se">\n</span><span class="s2">3. Atualizar Fruta</span><span class="se">\n</span><span class="s2">4. Apagar Fruta</span><span class="se">\n</span><span class="s2">5. Fazer Pedido (Venda ao Cliente)</span><span class="se">\n</span><span class="s2">0. Sair&quot;</span><span class="p">)</span>
-            <span class="n">opcao</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Escolhe uma opção: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">adicionar_fruta</span><span class="p">()</span>
-            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ver_fruta</span><span class="p">()</span>
-            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">atualizar_fruta</span><span class="p">()</span>
-            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">apagar_fruta</span><span class="p">()</span>
-            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fazer_pedido</span><span class="p">()</span>
-            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A encerrar o gestor... Até logo!&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Adicionar Fruta ao Estoque</span><span class="se">\n</span><span class="s2">2. Ver Fruta (por ID)</span><span class="se">\n</span><span class="s2">3. Atualizar Fruta</span><span class="se">\n</span><span class="s2">4. Apagar Fruta</span><span class="se">\n</span><span class="s2">5. Fazer Pedido (Venda ao Cliente)</span><span class="se">\n</span><span class="s2">0. Sair"</span><span class="p">)</span>
+            <span class="n">opcao</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Escolhe uma opção: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">adicionar_fruta</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ver_fruta</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">atualizar_fruta</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"4"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">apagar_fruta</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"5"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fazer_pedido</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">"0"</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">A encerrar o gestor... Até logo!"</span><span class="p">)</span>
                 <span class="k">break</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opção inválida! Tenta novamente.&quot;</span><span class="p">)</span>
-            <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Pressiona ENTER para continuar...&quot;</span><span class="p">)</span></div>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Opção inválida! Tenta novamente."</span><span class="p">)</span>
+            <span class="nb">input</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Pressiona ENTER para continuar..."</span><span class="p">)</span></div>
 </div>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">gestor</span> <span class="o">=</span> <span class="n">GestorFrutasCompleto</span><span class="p">()</span>
     <span class="n">gestor</span><span class="o">.</span><span class="n">iniciar</span><span class="p">()</span>
 </pre></div>
@@ -416,7 +423,7 @@
       &#169;2026, Artur Ferreira, Daniel Mikhelyev, Tómas Massano.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.2.0</a>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>

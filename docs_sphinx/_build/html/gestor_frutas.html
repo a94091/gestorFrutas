@@ -41,7 +41,7 @@
 <dd class="field-odd"><p>nov, 2026</p>
 </dd>
 <dt class="field-even">Version<span class="colon">:</span></dt>
-<dd class="field-even"><p>1.1</p>
+<dd class="field-even"><p>1.2</p>
 </dd>
 <dt class="field-odd">Authors<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Artur Ferreira, Daniel Mikhelyev, Tómas Massano</p>
@@ -112,7 +112,20 @@ Primeiro se insere o tipo, de seguida a espécie e peso</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasBase.atualizar_fruta">
 <span class="sig-name descname"><span class="pre">atualizar_fruta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasBase.atualizar_fruta"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasBase.atualizar_fruta" title="Link to this definition">¶</a></dt>
-<dd><p>Esta função atualiza dados de uma fruta existente atraves da inserção do ID</p>
+<dd><p>Esta função atualiza os atributos de uma fruta existente atraves da inserção do ID</p>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Vai aparecer um sinal de aviso caso for pressionar «Enter» 
+se o campo ainda estiver vazio e se o id for inválido</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ID, tipo, espécie e peso atualizados</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>strings, floats e inteiro</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -249,7 +262,7 @@ mensagem de aviso</p>
       &#169;2026, Artur Ferreira, Daniel Mikhelyev, Tómas Massano.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.2.0</a>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |

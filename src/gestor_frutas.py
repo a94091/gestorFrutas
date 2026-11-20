@@ -5,7 +5,7 @@
 """Sistema de Gestão de Frutas e Vendas em terminal (CLI).
 
 :Date: nov, 2026
-:Version: 1.1
+:Version: 1.2
 :Authors: Artur Ferreira, Daniel Mikhelyev, Tómas Massano
 """
 
@@ -138,7 +138,14 @@ class GestorFrutasBase:
             print(f"Fruta com o ID {f_id} não encontrada.")
 
     def atualizar_fruta(self):
-        """Esta função atualiza dados de uma fruta existente atraves da inserção do ID 
+        """Esta função atualiza os atributos de uma fruta existente atraves da inserção do ID 
+        
+        .. warning::
+                Vai aparecer um sinal de aviso caso for pressionar "Enter" 
+                se o campo ainda estiver vazio e se o id for inválido
+
+        :return: ID, tipo, espécie e peso atualizados
+        :rtype: strings, floats e inteiro
         """
 
         print("\n--- ATUALIZAR FRUTA ---")
