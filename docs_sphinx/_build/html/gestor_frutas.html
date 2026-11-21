@@ -110,7 +110,7 @@ Primeiro se insere o tipo, de seguida a espécie e peso</p>
 <dd class="field-odd"><p>fruta e ID</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
-<dd class="field-even"><p>string e inteiro</p>
+<dd class="field-even"><p>Strings</p>
 </dd>
 </dl>
 </dd></dl>
@@ -129,7 +129,7 @@ mensagem de aviso</p>
 <dd class="field-odd"><p>ID, tipo</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
-<dd class="field-even"><p>strings e inteiro</p>
+<dd class="field-even"><p>Strings</p>
 </dd>
 </dl>
 </dd></dl>
@@ -148,7 +148,7 @@ se o campo ainda estiver vazio e se o id for inválido</p>
 <dd class="field-odd"><p>ID, tipo, espécie e peso atualizados</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
-<dd class="field-even"><p>strings, floats e inteiro</p>
+<dd class="field-even"><p>Strings</p>
 </dd>
 </dl>
 </dd></dl>
@@ -168,7 +168,7 @@ mensagem de aviso</p>
 <dd class="field-odd"><p>A grelha</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
-<dd class="field-even"><p>strings, floats e inteiros</p>
+<dd class="field-even"><p>Strings</p>
 </dd>
 </dl>
 </dd></dl>
@@ -190,7 +190,7 @@ mensagem de aviso</p>
 <dd class="field-odd"><p>ID, tipo, espécie e peso</p>
 </dd>
 <dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
-<dd class="field-even"><p>strings, floats e inteiros</p>
+<dd class="field-even"><p>Strings</p>
 </dd>
 </dl>
 </dd></dl>
@@ -204,7 +204,28 @@ mensagem de aviso</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasCompleto.fazer_pedido">
 <span class="sig-name descname"><span class="pre">fazer_pedido</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gestor_frutas.html#GestorFrutasCompleto.fazer_pedido"><span class="viewcode-link"><span class="pre">[código</span> <span class="pre">fonte]</span></span></a><a class="headerlink" href="#gestor_frutas.GestorFrutasCompleto.fazer_pedido" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Esta função processa a venda de uma fruta por peso a um cliente e atualiza o stock.</p>
+<p>Solicita o ID da fruta, verifica a disponibilidade em stock, pede a quantidade 
+pretendida em quilos e recolhe os dados do cliente para emitir o resumo do pedido.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se o stock estiver vazio, o ID não existir ou a fruta estiver esgotada entao
+a operação é cancelada com uma mensagem de aviso.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>O peso da compra não pode ser inferior ou igual a zero, nem superior ao 
+peso atualmente disponível em stock.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Imprime o recibo do pedido no terminal e subtrai o peso vendido ao stock.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>Strings</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gestor_frutas.GestorFrutasCompleto.iniciar">

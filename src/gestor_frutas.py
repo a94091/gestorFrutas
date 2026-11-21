@@ -57,7 +57,7 @@ class GestorFrutasBase:
             mensagem de aviso 
 
         :return: A grelha
-        :rtype: strings, floats e inteiros
+        :rtype: Strings
         """
 
 
@@ -83,7 +83,7 @@ class GestorFrutasBase:
             O peso não pode ser e inferior e igual a zero
 
         :return: fruta e ID 
-        :rtype: string e inteiro
+        :rtype: Strings
         """
 
 
@@ -114,7 +114,7 @@ class GestorFrutasBase:
             mensagem de aviso 
 
         :return: ID, tipo, espécie e peso 
-        :rtype: strings, floats e inteiros
+        :rtype: Strings
         """
 
            
@@ -145,7 +145,7 @@ class GestorFrutasBase:
                 se o campo ainda estiver vazio e se o id for inválido
 
         :return: ID, tipo, espécie e peso atualizados
-        :rtype: strings, floats e inteiro
+        :rtype: Strings
         """
 
         print("\n--- ATUALIZAR FRUTA ---")
@@ -213,7 +213,7 @@ class GestorFrutasBase:
                     mensagem de aviso
         
         :return: ID, tipo
-        :rtype: strings e inteiro
+        :rtype: Strings
         """
 
         print("\n--- APAGAR FRUTA ---")
@@ -255,6 +255,24 @@ class Cliente:
 
 class GestorFrutasCompleto(GestorFrutasBase):
     def fazer_pedido(self):
+
+        """Esta função processa a venda de uma fruta por peso a um cliente e atualiza o stock.
+
+        Solicita o ID da fruta, verifica a disponibilidade em stock, pede a quantidade 
+        pretendida em quilos e recolhe os dados do cliente para emitir o resumo do pedido.
+
+        .. note::
+            Se o stock estiver vazio, o ID não existir ou a fruta estiver esgotada entao
+            a operação é cancelada com uma mensagem de aviso.
+
+        .. warning::
+            O peso da compra não pode ser inferior ou igual a zero, nem superior ao 
+            peso atualmente disponível em stock.
+
+        :return: Imprime o recibo do pedido no terminal e subtrai o peso vendido ao stock.
+        :rtype: Strings
+        """
+
         print("\n--- FAZER PEDIDO (COMPRA POR PESO) ---")
         if not self.frutas:
             print("Não há frutas no estoque para venda.")

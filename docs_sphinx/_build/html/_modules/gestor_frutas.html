@@ -98,7 +98,7 @@
 <span class="sd">            mensagem de aviso </span>
 
 <span class="sd">        :return: A grelha</span>
-<span class="sd">        :rtype: strings, floats e inteiros</span>
+<span class="sd">        :rtype: Strings</span>
 <span class="sd">        """</span>
 
 
@@ -127,7 +127,7 @@
 <span class="sd">            O peso não pode ser e inferior e igual a zero</span>
 
 <span class="sd">        :return: fruta e ID </span>
-<span class="sd">        :rtype: string e inteiro</span>
+<span class="sd">        :rtype: Strings</span>
 <span class="sd">        """</span>
 
 
@@ -161,7 +161,7 @@
 <span class="sd">            mensagem de aviso </span>
 
 <span class="sd">        :return: ID, tipo, espécie e peso </span>
-<span class="sd">        :rtype: strings, floats e inteiros</span>
+<span class="sd">        :rtype: Strings</span>
 <span class="sd">        """</span>
 
            
@@ -195,7 +195,7 @@
 <span class="sd">                se o campo ainda estiver vazio e se o id for inválido</span>
 
 <span class="sd">        :return: ID, tipo, espécie e peso atualizados</span>
-<span class="sd">        :rtype: strings, floats e inteiro</span>
+<span class="sd">        :rtype: Strings</span>
 <span class="sd">        """</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- ATUALIZAR FRUTA ---"</span><span class="p">)</span>
@@ -266,7 +266,7 @@
 <span class="sd">                    mensagem de aviso</span>
 <span class="sd">        </span>
 <span class="sd">        :return: ID, tipo</span>
-<span class="sd">        :rtype: strings e inteiro</span>
+<span class="sd">        :rtype: Strings</span>
 <span class="sd">        """</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- APAGAR FRUTA ---"</span><span class="p">)</span>
@@ -317,6 +317,24 @@
 <div class="viewcode-block" id="GestorFrutasCompleto.fazer_pedido">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasCompleto.fazer_pedido">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">fazer_pedido</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">"""Esta função processa a venda de uma fruta por peso a um cliente e atualiza o stock.</span>
+
+<span class="sd">        Solicita o ID da fruta, verifica a disponibilidade em stock, pede a quantidade </span>
+<span class="sd">        pretendida em quilos e recolhe os dados do cliente para emitir o resumo do pedido.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Se o stock estiver vazio, o ID não existir ou a fruta estiver esgotada entao</span>
+<span class="sd">            a operação é cancelada com uma mensagem de aviso.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            O peso da compra não pode ser inferior ou igual a zero, nem superior ao </span>
+<span class="sd">            peso atualmente disponível em stock.</span>
+
+<span class="sd">        :return: Imprime o recibo do pedido no terminal e subtrai o peso vendido ao stock.</span>
+<span class="sd">        :rtype: Strings</span>
+<span class="sd">        """</span>
+
         <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- FAZER PEDIDO (COMPRA POR PESO) ---"</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frutas</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Não há frutas no estoque para venda."</span><span class="p">)</span>
