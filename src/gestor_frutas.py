@@ -234,6 +234,19 @@ class GestorFrutasBase:
 
 
 class Cliente:
+
+    """Representa um cliente que efetua uma compra no sistema.
+
+    :param nome: Nome completo do cliente.
+    :type nome: str
+    :param morada: Endereço ou rua de entrega/faturação do cliente.
+    :type morada: str
+    :param telefone: Contacto telefónico do cliente.
+    :type telefone: str
+    :param cidade: Cidade de residência do cliente.
+    :type cidade: str
+    """
+
     def __init__(self, nome, morada, telefone, cidade):
         self.nome = nome
         self.morada = morada
