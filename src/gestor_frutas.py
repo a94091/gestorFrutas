@@ -328,6 +328,20 @@ class GestorFrutasCompleto(GestorFrutasBase):
         print("=" * 45)
 
     def iniciar(self):
+
+        """Inicia o ciclo principal do programa.
+
+        Mostra continuamente a tabela de stock atualizada e o menu de opções,
+        e vai fazer loop ate ser selecionada a opção de saída (0).
+
+        .. note::
+            Pausa a execução após cada operação, aguardando que o utilizador
+            pressione ENTER antes de limpar/atualizar o menu.
+
+        :return: Mostra grelha, menu de opcoes
+        :rtype: String
+        """
+
         while True:
             self.mostrar_grelha()
             print("1. Adicionar Fruta ao Estoque\n2. Ver Fruta (por ID)\n3. Atualizar Fruta\n4. Apagar Fruta\n5. Fazer Pedido (Venda ao Cliente)\n0. Sair")

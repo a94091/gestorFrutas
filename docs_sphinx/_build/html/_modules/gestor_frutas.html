@@ -393,6 +393,20 @@
 <div class="viewcode-block" id="GestorFrutasCompleto.iniciar">
 <a class="viewcode-back" href="../gestor_frutas.html#gestor_frutas.GestorFrutasCompleto.iniciar">[documentos]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">iniciar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">"""Inicia o ciclo principal do programa.</span>
+
+<span class="sd">        Mostra continuamente a tabela de stock atualizada e o menu de opções,</span>
+<span class="sd">        e vai fazer loop ate ser selecionada a opção de saída (0).</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Pausa a execução após cada operação, aguardando que o utilizador</span>
+<span class="sd">            pressione ENTER antes de limpar/atualizar o menu.</span>
+
+<span class="sd">        :return: Mostra grelha, menu de opcoes</span>
+<span class="sd">        :rtype: String</span>
+<span class="sd">        """</span>
+
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">mostrar_grelha</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Adicionar Fruta ao Estoque</span><span class="se">\n</span><span class="s2">2. Ver Fruta (por ID)</span><span class="se">\n</span><span class="s2">3. Atualizar Fruta</span><span class="se">\n</span><span class="s2">4. Apagar Fruta</span><span class="se">\n</span><span class="s2">5. Fazer Pedido (Venda ao Cliente)</span><span class="se">\n</span><span class="s2">0. Sair"</span><span class="p">)</span>
