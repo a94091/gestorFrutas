@@ -205,6 +205,17 @@ class GestorFrutasBase:
         print(f"\nFruta ID {f_id} atualizada com sucesso!")
 
     def apagar_fruta(self):
+
+        """Esta função apaga uma fruta existente atraves da inserção do ID 
+                
+        .. note::
+                    Se não houver nenhuma fruta registada no stock mostra uma 
+                    mensagem de aviso
+        
+        :return: ID, tipo
+        :rtype: strings e inteiro
+        """
+
         print("\n--- APAGAR FRUTA ---")
         if not self.frutas:
             print("Não existem frutas registadas para apagar.")
