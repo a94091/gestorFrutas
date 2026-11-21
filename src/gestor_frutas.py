@@ -254,6 +254,12 @@ class Cliente:
         self.cidade = cidade
 
 class GestorFrutasCompleto(GestorFrutasBase):
+
+    """Extensão do gestor de frutas que adiciona funcionalidades de venda e o menu principal.
+
+    Herda todos os atributos e métodos de gestão de stock da classe :class:`GestorFrutasBase`.
+    """
+
     def fazer_pedido(self):
 
         """Esta função processa a venda de uma fruta por peso a um cliente e atualiza o stock.
